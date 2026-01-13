@@ -1,0 +1,5 @@
+@use '../abstracts/mixins.scss' as mixin;
+
+:root{
+  @include mixin.size-variables-generator();
+}

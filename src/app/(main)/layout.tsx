@@ -1,15 +1,17 @@
 import type { ReactNode } from "react";
+import { Header } from "@component/Header";
 
 const MainLayout = ({
-	children,
+  children,
 }: Readonly<{
-	children: ReactNode;
+  children: ReactNode;
 }>) => {
-	return (
-    <>
-      {children}
-		</>
-	);
+  return (
+    <div className="min-h-screen flex flex-row">
+      <Header />
+      <main className="flex-bgs">{children}</main>
+    </div>
+  );
 };
 
 export default MainLayout;

@@ -1,1 +1,6 @@
-@forward './tailwind/index.scss'
+@forward "./utilities/root.scss";
+@forward "./tailwind/index.scss";
+
+section {
+  width: 100%;
+}
