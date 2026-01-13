@@ -1,0 +1,40 @@
+@use "sass:map";
+
+@use "variables" as v;
+@use "functions" as f;
+
+/// Mixin para gerar todas as variáveis de tamanho
+///
+/// @requires {variable} sizes - Lista com todos os tamanhos
+///
+/// @example scss - @include size-variables-generator;
+///
+/// @output   --6xs: 0.0625rem; --5xs: 0.125rem; --4xs: 0.25rem; ...
+@mixin size-variables-generator() {
+  @each $size in v.$sizes {
+    $id: map.get($size, id);
+    $name: map.get($size, name);
+    $valueEM: map.get($size, valueEM);
+
+    --#{$name}: #{$valueEM}rem;
+  }
+}
+
+/// Mapeia as variáveis globais para as escalas do tema do Tailwind.
+///
+/// @requires Deve ser sempre utilizado dentro do @theme.
+///
+/// @param {list} $scales - Uma lista de nomes de escala do Tailwind.
+///
+/// @example scss - @include scales-for-tailwind(('spacing', 'text', 'radius'))
+///
+/// @output scss - ... --spacing-md: 1rem; ...
+@mixin scales-for-tailwind($scales) {
+  @each $scale in $scales {
+    @each $size in v.$sizes {
+      $name: map.get($size, name);
+
+      --#{$scale}-#{$name}: var(--#{$name});
+    }
+  }
+}

@@ -1,0 +1,25 @@
+@forward "tailwindcss";
+
+@utility flex-bgs {
+  flex-basis: 0;
+  flex-grow: 1;
+  flex-shrink: 1;
+}
+
+@utility flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@utility flex-start {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+@utility flex-end {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
