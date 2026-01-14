@@ -41,7 +41,7 @@ export const Header = () => {
       </div>
       <nav className="w-full flex-bgs flex-start flex-col gap-2xl p-md bg-gray-95">
         {NavHeader.map((item) => (
-          <div key={item.id}>
+          <div key={item.id} className="w-full">
             <h2 className="text-sm font-bold text-gray-55">{item.label}</h2>
             <ul className="flex-start flex-col gap-4xs">
               {item.children &&

@@ -1,5 +1,6 @@
 import { Container } from "@component/Container";
 import { BvIcon } from "bevi-icon";
+import {routes} from '@config/routes'
 
 const Home = () => {
   return (
@@ -19,7 +20,7 @@ const Home = () => {
         <Container>
           <ul>
             <li>
-              <a href="/bevi-icons" className="underline">Bevi icons</a>
+              <a href={routes.beviIcon} className="underline">Bevi icons</a>
             </li>
           </ul>
         </Container>

@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import { Header } from "@component/Header";
+import { ActionBar } from "@/components/ActionBar";
 
 const MainLayout = ({
   children,
@@ -9,7 +10,7 @@ const MainLayout = ({
   return (
     <div className="min-h-screen flex flex-row">
       <Header />
-      <main className="flex-bgs">{children}</main>
+      <main className="flex-bgs pb-5xl">{children}</main>
     </div>
   );
 };
