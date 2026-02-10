@@ -12,6 +12,19 @@ export type NavigationType = {
 	children?: NavigationType[];
 };
 
+export const Homepage: NavigationType[] = [
+  {
+		id: "bevi-icon",
+		label: "bevi-icon",
+		href: routes.beviIcon,
+	},
+	{
+		id: "bevi-logo",
+		label: "bevi-logo",
+		href: routes.beviLogo,
+	},
+]
+
 export const Header: NavigationType[] = [
 	{
 		id: "bevi-icon",
