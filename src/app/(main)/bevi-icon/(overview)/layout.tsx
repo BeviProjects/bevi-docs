@@ -2,16 +2,16 @@ import type { ReactNode } from "react";
 import { ActionBar } from "@/components/ActionBar";
 
 const BeviIconLayout = ({
-  children,
+	children,
 }: Readonly<{
-  children: ReactNode;
+	children: ReactNode;
 }>) => {
-  return (
-    <>
-      <ActionBar />
-      {children}
-    </>
-  );
+	return (
+		<>
+			<ActionBar />
+			{children}
+		</>
+	);
 };
 
 export default BeviIconLayout;

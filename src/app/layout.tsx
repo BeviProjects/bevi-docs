@@ -20,7 +20,11 @@ const RootLayout = ({
 }>) => {
 	return (
 		<html lang="pt-BR">
-			<body className={`${nunitoSans.variable} antialiased min-h-screen bg-gray-95`}>{children}</body>
+			<body
+				className={`${nunitoSans.variable} antialiased min-h-screen bg-gray-95`}
+			>
+				{children}
+			</body>
 		</html>
 	);
 };
