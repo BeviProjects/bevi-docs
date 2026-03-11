@@ -1,17 +1,20 @@
 import { LibSelectedProvider } from "@context/LibSelectedContext";
-import { type LogoRegistry, logos } from "bevi-logo";
+import { type LogoRegistryType, logos } from "bevi-logo";
 import type { ReactNode } from "react";
+import { Suspense } from "react";
 
 const BeviLogoLayout = ({
-	children,
+  children,
 }: Readonly<{
-	children: ReactNode;
+  children: ReactNode;
 }>) => {
-	return (
-		<LibSelectedProvider<LogoRegistry> initialData={logos}>
-			{children}
-		</LibSelectedProvider>
-	);
+  return (
+    <Suspense>
+      <LibSelectedProvider<LogoRegistryType> initialData={logos}>
+        {children}
+      </LibSelectedProvider>
+    </Suspense>
+  );
 };
 
 export default BeviLogoLayout;
