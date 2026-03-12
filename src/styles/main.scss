@@ -1,6 +1,14 @@
 @forward "./utilities/root.scss";
 @forward "./tailwind/index.scss";
 
+html {
+    scroll-behavior: smooth;
+}
+
 section {
-  width: 100%;
+    width: 100%;
+}
+
+[id] {
+    scroll-margin-top: 128px;
 }

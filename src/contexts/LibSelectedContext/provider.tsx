@@ -14,7 +14,7 @@ import type { LibSelectedType } from "./type";
 export type GroupableItem = {
   displayName: string;
   name?: string;
-  tags?: string[];
+  tags?: ReadonlyArray<string>;
 };
 
 export const LibSelectedContext =

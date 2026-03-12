@@ -1,14 +1,23 @@
-import { ReactNode } from "react";
+import { ReactNode, forwardRef } from "react";
 import { Container } from "@component/Container";
+import useScroll from "@hook/useScroll";
 
 type ActionBarProps = {
   children: ReactNode;
 };
 
-export const ActionBar = ({ children }: ActionBarProps) => {
-  return (
-    <div className="py-md flex flex-row items-center justify-start">
-      <Container size="full">{children}</Container>
-    </div>
-  );
-};
+export const ActionBar = forwardRef<HTMLDivElement, ActionBarProps>(
+  ({ children }, ref) => {
+    const scrollY = useScroll();
+    return (
+      <div
+        ref={ref}
+        className={`fixed w-[calc(100%-256px)] top-0 left-10xl bg-gray-95 ${scrollY > 0 ? "border-b border-gray-85" : ""}`}
+      >
+        <div className="py-md">
+          <Container size="full">{children}</Container>
+        </div>
+      </div>
+    );
+  },
+);
