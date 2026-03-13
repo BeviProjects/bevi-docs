@@ -7,6 +7,7 @@ import { type BvIconRegistry, allBvIcons } from "bevi-icon";
 import type { ReactNode } from "react";
 import { Suspense } from "react";
 import { Footer } from "@component/Footer";
+import {IconVariantProvider} from '@context/IconVariantContext'
 
 const BeviIconLayout = ({
   children,
@@ -19,10 +20,12 @@ const BeviIconLayout = ({
   return (
     <Suspense>
       <LibSelectedProvider<BvIconRegistry> initialData={allBvIcons}>
+        <IconVariantProvider initialData={{ variant: "duo", weight: 400 }}>
         <div className="w-full">
           <main className="flex-bgs pb-5xl">{children}</main>
           <Footer total={allBvIcons.length} />
-        </div>
+          </div>
+        </IconVariantProvider>
       </LibSelectedProvider>
     </Suspense>
   );

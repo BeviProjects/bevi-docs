@@ -13,6 +13,7 @@ type LibraryPageTemplateProps<TItem> = {
   renderItem: (item: TItem) => React.ReactNode;
   onItemClick: (item: TItem) => void;
   gridConfig?: GridConfig;
+  btnMinHeight?: string;
 };
 
 const DEFAULT_GRID: GridConfig = {
@@ -26,6 +27,7 @@ export const OverviewPageTemplate = <
   renderItem,
   onItemClick,
   gridConfig = DEFAULT_GRID,
+  btnMinHeight = "min-h-7xl",
 }: LibraryPageTemplateProps<TItem>) => {
   const { groupedData, sortedLetters, isFiltering } =
     useLibSelectedContext<TItem>();
@@ -58,7 +60,7 @@ export const OverviewPageTemplate = <
                 </h2>
                 <div className={`grid ${cols} ${gap}`}>
                   {groupedData[letter].map((item) => (
-                    <ButtonShow key={item.id} onClick={() => onItemClick(item)}>
+                    <ButtonShow key={item.id} onClick={() => onItemClick(item)} className={btnMinHeight}>
                       {renderItem(item)}
                     </ButtonShow>
                   ))}

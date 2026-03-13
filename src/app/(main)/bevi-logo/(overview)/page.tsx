@@ -52,15 +52,14 @@ const BeviLogo = () => {
 
       <OverviewPageTemplate<LogoRegistryType>
         onItemClick={handleClick}
+        btnMinHeight="min-h-[203px]"
         renderItem={(logo) => (
-          <div className="px-2xl py-md">
-            <BvLogo
-              name={logo.displayName}
-              width={192}
-              height={171}
-              className="w-full"
-            />
-          </div>
+          <BvLogo
+            name={logo.displayName}
+            width={192}
+            height={171}
+            className="w-full"
+          />
         )}
       />
     </>

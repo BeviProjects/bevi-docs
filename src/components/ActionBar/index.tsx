@@ -12,7 +12,7 @@ export const ActionBar = forwardRef<HTMLDivElement, ActionBarProps>(
     return (
       <div
         ref={ref}
-        className={`fixed w-[calc(100%-256px)] top-0 left-10xl bg-gray-95 ${scrollY > 0 ? "border-b border-gray-85" : ""}`}
+        className={`fixed z-8 w-[calc(100%-256px)] top-0 left-10xl bg-gray-95 ${scrollY > 0 ? "border-b border-gray-85" : ""}`}
       >
         <div className="py-md">
           <Container size="full">{children}</Container>
