@@ -12,51 +12,9 @@ import {
   useIconVariantContext,
   type VariantType,
   type WeightType,
-} from "@/contexts/IconVariantContext";
+} from "@/app/(main)/bevi-icon/contexts/IconVariantContext";
+import { variantsSwitch, weightsSwitch } from "../data/variantsSwitch";
 
-const variants: SwitchData[] = [
-  {
-    id: "solid",
-    label: "Solid",
-    value: "solid",
-    iconName: "cube",
-    iconVariant: "solid",
-  },
-  {
-    id: "duo",
-    label: "Duo",
-    value: "duo",
-    iconName: "cube",
-    iconVariant: "duo",
-  },
-  {
-    id: "dark",
-    label: "Dark",
-    value: "dark",
-    iconName: "cube",
-    iconVariant: "dark",
-  },
-  {
-    id: "light",
-    label: "Light",
-    value: "light",
-    iconName: "cube",
-    iconVariant: "light",
-  },
-];
-
-const weights: SwitchData[] = [
-  {
-    id: "regular",
-    label: "Regular",
-    value: 400,
-  },
-  {
-    id: "bold",
-    label: "Bold",
-    value: 600,
-  },
-];
 
 const BeviIconLayout = ({
   children,
@@ -75,13 +33,13 @@ const BeviIconLayout = ({
             <SearchBar />
             <div className="flex flex-row gap-2xs">
               <Switch
-                data={weights}
+                data={weightsSwitch}
                 defaultValue={weight}
                 onChangeTransform={(item) => item.value as WeightType}
                 onChange={(selected) => setWeight(selected)}
               />
               <Switch
-                data={variants}
+                data={variantsSwitch}
                 defaultValue={variant}
                 onChangeTransform={(item) => item.value as VariantType}
                 onChange={(selected) => setVariant(selected)}

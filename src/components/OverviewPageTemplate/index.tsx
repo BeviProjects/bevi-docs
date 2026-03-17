@@ -46,7 +46,7 @@ export const OverviewPageTemplate = <
         </section>
       )}
 
-      <section className="pb-5xl">
+      <section className="pb-5xl bg-gray-95">
         <Container size="full">
           <div className="space-y-md">
             {sortedLetters.map((letter) => (

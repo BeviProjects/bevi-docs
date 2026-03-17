@@ -12,11 +12,12 @@
     "format:all": "biome check --write --unsafe"
   },
   "dependencies": {
-    "bevi-icon": "^2.0.6",
+    "bevi-icon": "^2.0.8",
     "bevi-logo": "file:bevi-logo-0.0.1.tgz",
     "next": "16.1.1",
     "react": "19.2.3",
-    "react-dom": "19.2.3"
+    "react-dom": "19.2.3",
+    "vaul": "^1.1.2"
   },
   "devDependencies": {
     "@biomejs/biome": "2.2.0",
