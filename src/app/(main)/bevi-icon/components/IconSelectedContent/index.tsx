@@ -1,29 +1,23 @@
 "use client";
-import { useState, useEffect } from "react";
 import { Container } from "@component/Container";
-import { BvIcon, type BvIconRegistry, BvIconName } from "bevi-icon";
-import { useIconSelectedContext } from "../contexts/IconSelectedContext";
+import { BvIcon, BvIconName } from "bevi-icon";
+import { useIconSelectedContext } from "@bevi-icon/contexts/IconSelectedContext";
 import { CopyBox } from "@/components/CopyBox";
-import { Switch, type SwitchData } from "@component/Switch";
-import {
-  useIconVariantContext,
-  type VariantType,
-  type WeightType,
-} from "@/app/(main)/bevi-icon/contexts/IconVariantContext";
-import {variantsSwitch} from '../data/variantsSwitch'
 
 export const IconSelectedContent = () => {
-  const { iconSelected, setIconSelected, setVariantsSelected } = useIconSelectedContext();
-  const { variant, weight } = useIconVariantContext();
+  const { iconSelected } =
+    useIconSelectedContext();
 
   return (
     <Container className="py-2xl flex flex-row gap-2xl">
       <div className="bg-white p-2xl rounded-2xl">
-        <BvIcon
-          name={iconSelected.displayName as BvIconName}
-          variant="duo"
-          width={256}
-        />
+        <div className="size-10xl">
+          <BvIcon
+            name={iconSelected.displayName as BvIconName}
+            variant="duo"
+            width={256}
+          />
+        </div>
       </div>
       <div className="py-2xl flex-start flex-col gap-2xl">
         <CopyBox label="Name" value={iconSelected.name}>

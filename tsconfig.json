@@ -20,6 +20,8 @@
     ],
     "paths": {
       "@/*": ["./src/*"],
+      "@bevi-icon/*": ["./src/app/(main)/bevi-icon/*"],
+      "@bevi-logo/*": ["./src/app/(main)/bevi-logo/*"],
       "@component/*": ["./src/components/*"],
       "@config/*": ["./src/config/*"],
       "@context/*": ["./src/contexts/*"],

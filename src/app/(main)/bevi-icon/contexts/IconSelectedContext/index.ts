@@ -1,6 +1,6 @@
 import { Provider } from "./Provider";
 
-export const IconSelectet = {
+export const IconSelected = {
   Provider,
 };
 

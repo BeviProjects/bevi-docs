@@ -41,7 +41,9 @@ export const OverviewPageTemplate = <
       {isFiltering && sortedLetters.length === 0 && (
         <section>
           <Container size="full">
-            <p>Nenhum resultado encontrado.</p>
+            <div className="p-2xs inset-ring-1 inset-ring-gray-75 rounded-sm bg-white">
+              <p className="font-semibold text-gray-35">Nenhum resultado encontrado.</p>
+            </div>
           </Container>
         </section>
       )}

@@ -1,8 +1,8 @@
 "use client";
 import { createContext, type ReactNode, useState } from "react";
-import type { IconVariantType, VariantType, WeightType } from "./type";
+import type { IconGlobalVariantType, VariantType, WeightType } from "./type";
 
-export const IconVariantContext = createContext<IconVariantType | null>(null);
+export const IconGlobalVariantContext = createContext<IconGlobalVariantType | null>(null);
 
 type ProviderProps = {
   children: ReactNode;
@@ -18,8 +18,8 @@ export const Provider = ({ children, initialData }: ProviderProps) => {
 
 
   return (
-    <IconVariantContext.Provider value={{variant, setVariant, weight, setWeight}}>
+    <IconGlobalVariantContext.Provider value={{variant, setVariant, weight, setWeight}}>
       {children}
-    </IconVariantContext.Provider>
+    </IconGlobalVariantContext.Provider>
   );
 };

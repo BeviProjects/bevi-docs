@@ -1,5 +1,3 @@
-"use client";
-
 import type { ReactNode } from "react";
 import { Drawer } from "vaul";
 
@@ -7,12 +5,14 @@ type VaulDrawerProps = {
   children: ReactNode;
   fullScreen?: boolean;
   title: string;
+  description: string;
 };
 
 export const VaulDrawer = ({
   children,
   fullScreen,
   title,
+  description
 }: VaulDrawerProps) => {
   return (
     <Drawer.Portal>
@@ -24,6 +24,7 @@ export const VaulDrawer = ({
           <Drawer.Handle />
         </div>
         <Drawer.Title className="sr-only">{title}</Drawer.Title>
+        <Drawer.Description className="sr-only">{description}</Drawer.Description>
         <div>{children}</div>
       </Drawer.Content>
     </Drawer.Portal>

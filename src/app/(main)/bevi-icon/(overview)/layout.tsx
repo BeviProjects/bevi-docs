@@ -7,14 +7,10 @@ import { ActionBar } from "@/components/ActionBar";
 import { SearchBar } from "@/components/SearchBar";
 import { Switch, type SwitchData } from "@/components/Switch";
 import { AlphabeticLinks } from "@/components/AlphabetLinks";
-import {
-  IconVariantProvider,
-  useIconVariantContext,
-  type VariantType,
-  type WeightType,
-} from "@/app/(main)/bevi-icon/contexts/IconVariantContext";
+import { useIconGlobalVariantContext } from "@bevi-icon/contexts/IconGlobalVariantContext";
 import { variantsSwitch, weightsSwitch } from "../data/variantsSwitch";
-
+import { IconSelected } from "@bevi-icon/contexts/IconSelectedContext";
+import type { VariantType, WeightType } from "@bevi-icon/types/variants";
 
 const BeviIconLayout = ({
   children,
@@ -23,10 +19,11 @@ const BeviIconLayout = ({
 }>) => {
   const { sortedLetters } = useLibSelectedContext<BvIconRegistry>();
   const [ref, { height }] = useElementSize<HTMLDivElement>();
-  const { variant, setVariant, weight, setWeight } = useIconVariantContext();
+  const { variant, setVariant, weight, setWeight } =
+    useIconGlobalVariantContext();
 
   return (
-    <>
+    <IconSelected.Provider>
       <ActionBar ref={ref}>
         <div className="flex flex-col gap-2xs">
           <div className="flex flex-row gap-2xs justify-between">
@@ -52,7 +49,7 @@ const BeviIconLayout = ({
         </div>
       </ActionBar>
       <div style={{ paddingTop: height }}>{children}</div>
-    </>
+    </IconSelected.Provider>
   );
 };
 

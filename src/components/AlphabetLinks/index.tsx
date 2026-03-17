@@ -9,7 +9,7 @@ type AlphabeticLinksProps = {
 export const AlphabeticLinks = ({ letters }: AlphabeticLinksProps) => {
   const hash = useHash();
   return (
-    <div className="w-fit flex flex-row gap-2xs p-4xs inset-ring-1 inset-ring-gray-75 rounded-sm bg-white">
+    <div className="min-h-3xl w-fit min-w-2xl flex flex-row gap-2xs p-4xs inset-ring-1 inset-ring-gray-75 rounded-sm bg-white">
       {letters.map((letter) => (
         <Link
           key={letter}
