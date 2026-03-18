@@ -1,10 +1,15 @@
 import type { Metadata } from "next";
-import { Nunito_Sans } from "next/font/google";
+import { Nunito_Sans, Roboto_Mono } from "next/font/google";
 import type { ReactNode } from "react";
 import "../styles/main.scss";
 
 const nunitoSans = Nunito_Sans({
 	variable: "--font-nunito-sans",
+	subsets: ["latin"],
+});
+
+const robotoMono = Roboto_Mono({
+	variable: "--font-roboto-mono",
 	subsets: ["latin"],
 });
 
@@ -21,7 +26,7 @@ const RootLayout = ({
 	return (
 		<html lang="pt-BR">
 			<body
-				className={`${nunitoSans.variable} antialiased min-h-screen bg-gray-95`}
+				className={`${nunitoSans.variable} ${robotoMono.variable} antialiased min-h-screen bg-gray-95`}
 			>
 				{children}
 			</body>

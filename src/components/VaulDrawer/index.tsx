@@ -18,7 +18,7 @@ export const VaulDrawer = ({
     <Drawer.Portal>
       <Drawer.Overlay className="fixed inset-0 bg-black/40" />
       <Drawer.Content
-        className={`fixed bottom-0 left-0 right-0 ${fullScreen ? "custom-drawer-size" : "h-fit"} outline-none bg-gray-95 rounded-t-md`}
+        className={`fixed bottom-0 left-0 right-0 ${fullScreen ? "custom-drawer-size" : "h-fit"} outline-none bg-white rounded-t-md`}
       >
         <div className="w-full py-md">
           <Drawer.Handle />

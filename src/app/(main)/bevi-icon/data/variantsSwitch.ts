@@ -36,48 +36,12 @@ export const weightsSwitch: SwitchData[] = [
     id: "regular",
     label: "Regular",
     value: 400,
+    pos: "400",
   },
   {
     id: "bold",
     label: "Bold",
     value: 600,
+    pos: "600",
   },
 ];
-
-
-
-
-
-
-//
-// const iconsWithoutRegularVersion = [
-//   "add",
-//   "chevronDownward",
-//   "chevronUpDouble",
-//   "chevronUpward",
-//   "close",
-//   "check",
-// ];
-
-// const iconsWithoutVariants = [
-//   "add",
-//   "arrowBack",
-//   "arrowForward",
-//   "arrowNorth",
-//   "arrowNorthEast",
-//   "arrowNorthWeast",
-//   "arrowNorthWeast",
-//   "attachFile",
-//   "chevronBack",
-//   "chevronDown",
-//   "chevronDownward",
-//   "chevronForward",
-//   "chevronLeft",
-//   "chevronRight",
-//   "chevronUp",
-//   "chevronUpDouble",
-//   "chevronUpward",
-//   "close",
-//   "check",
-//   "remove",
-// ];

@@ -5,7 +5,7 @@ import { Homepage, type NavigationType } from "@config/navigation";
 
 const Home = () => {
   return (
-    <main className="min-h-screen flex-center flex-col ">
+    <main className="min-h-screen flex-center flex-col relative">
       <section>
         <Container>
           <div className="flex flex-row items-center justify-start gap-2xs">
@@ -28,6 +28,17 @@ const Home = () => {
               </li>
             ))}
           </ul>
+        </Container>
+      </section>
+      <section className="absolute bottom-0 left-0">
+        <Container>
+          <div className="flex flex-row justify-start items-center gap-2xs p-2xs bg-yellow-90 inset-ring-1 inset-ring-yellow-80 rounded-md mb-xs">
+              <BvIcon name="error" className="text-yellow-20" />
+            <p className="font-semibold text-yellow-20">
+              Esse ambiente se encontra em desenvolvimento, então erros são
+              esperados, e serão corrigidos ao longo do tempo.
+            </p>
+          </div>
         </Container>
       </section>
     </main>

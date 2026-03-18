@@ -36,11 +36,11 @@ export const CopyBox = ({
     <Tooltip label={tooltipMessage}>
       <button
         type="button"
-        className="relative flex-start flex-col p-4xs rounded-xs cursor-pointer inset-ring-1 inset-ring-transparent hover:inset-ring-gray-85"
+        className="relative flex-start flex-col gap-4xs p-2xs rounded-xs cursor-pointer inset-ring-1 inset-ring-transparent hover:inset-ring-gray-85"
         onClick={() => copy(value)}
       >
-        <span className="text-xs font-bold text-gray-35">{label}</span>
-        <Tag className={`${size} leading-none`}>{children}</Tag>
+        <small className="text-sm text-gray-35 leading-none">{label}</small>
+        <Tag className={`${size} font-bold leading-none`}>{children}</Tag>
       </button>
     </Tooltip>
   );

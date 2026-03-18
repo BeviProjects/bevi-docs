@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       bevi-icon:
-        specifier: ^2.0.8
-        version: 2.0.8
+        specifier: ^2.0.10
+        version: 2.0.10
       bevi-logo:
         specifier: file:bevi-logo-0.0.1.tgz
         version: file:bevi-logo-0.0.1.tgz
@@ -23,6 +23,9 @@ importers:
       react-dom:
         specifier: 19.2.3
         version: 19.2.3(react@19.2.3)
+      sugar-high:
+        specifier: ^0.9.5
+        version: 0.9.5
       vaul:
         specifier: ^1.1.2
         version: 1.1.2(@types/react-dom@19.2.3(@types/react@19.2.7))(@types/react@19.2.7)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
@@ -715,8 +718,8 @@ packages:
     resolution: {integrity: sha512-B0xUquLkiGLgHhpPBqvl7GWegWBUNuujQ6kXd/r1U38ElPT6Ok8KZ8e+FpUGEc2ZoRQUzq/aUnaKFc/svWUGSg==}
     hasBin: true
 
-  bevi-icon@2.0.8:
-    resolution: {integrity: sha512-Bpb2O6pAkgxniVulhGj9i8JIqXPh5SYBpCcswOMqQ497VfJl3n7w/0clMfmh5ULW7EqRca2lMMpNU783jEd+hw==}
+  bevi-icon@2.0.10:
+    resolution: {integrity: sha512-AyAcWGj/tmVOlWNWF3d/gBJAIaMTlwhBmkRQurVlo0Isxhb0NJJjgavX7SkNMfCozlTqVB8pGzkFo1FKH5d11w==}
 
   bevi-logo@file:bevi-logo-0.0.1.tgz:
     resolution: {integrity: sha512-8t30iXDt01QiIeu47UD7w5vSma3gz7LswV0FM8gLoiDuPr40AGQutPjgFwp0qm1cq57wmWE6ZcM7cg+wfX8Nfw==}
@@ -965,6 +968,9 @@ packages:
         optional: true
       babel-plugin-macros:
         optional: true
+
+  sugar-high@0.9.5:
+    resolution: {integrity: sha512-eirwp9p7QcMg6EFCD6zrGh4H30uFx2YtfiMJUavagceP6/YUUjLeiQmis7QuwqKB3nXrWXlLaRumCqOd9AKpSA==}
 
   tailwindcss@4.1.18:
     resolution: {integrity: sha512-4+Z+0yiYyEtUVCScyfHCxOYP06L5Ne+JiHhY2IjR2KWMIWhJOYZKLSGZaP5HkZ8+bY0cxfzwDE5uOmzFXyIwxw==}
@@ -1491,7 +1497,7 @@ snapshots:
 
   baseline-browser-mapping@2.9.14: {}
 
-  bevi-icon@2.0.8:
+  bevi-icon@2.0.10:
     dependencies:
       react: 19.2.3
       react-dom: 19.2.3(react@19.2.3)
@@ -1723,6 +1729,8 @@ snapshots:
     dependencies:
       client-only: 0.0.1
       react: 19.2.3
+
+  sugar-high@0.9.5: {}
 
   tailwindcss@4.1.18: {}
 

@@ -43,13 +43,16 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 
 
 
-Visual do logo
-Nome do logo
-Display name
-Código react
+Informações para mostrar
 Tags
-Variants
+Variantes
+Weight
 
-Copy
-Copy display name
-Copy svg file
+Copiar
+displayName
+name
+svg file
+Código React
+
+Botões
+Download SVG

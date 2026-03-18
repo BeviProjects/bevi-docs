@@ -8,6 +8,7 @@ export type SwitchData = {
   label: string;
   iconName?: BvIconName;
   iconVariant?: IconVariant;
+  pos?: string
   value: string | number;
 };
 
@@ -64,7 +65,11 @@ export const Switch = <T extends SwitchData, R = T>({
                 width={16}
               />
             )}
+            <span>
             {item.label}
+
+            </span>
+            {item.pos && <i className="text-gray-75">{item.pos}</i>}
           </button>
         );
       })}
