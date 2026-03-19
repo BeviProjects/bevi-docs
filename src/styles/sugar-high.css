@@ -27,13 +27,8 @@
 }*/
 
 pre[data-language="html"] {
-	--sh-class: var(--blue-300);
-	--sh-identifier: ;
-	--sh-sign: var(--white-64);
-	--sh-property: var(--red-300);
-	--sh-entity: var(--blue-300);
-	--sh-jsxliterals: var(--white-100);
-	--sh-string: var(--green-300);
-	--sh-keyword: var(--purple-300);
-	--sh-comment: var(--red-300);
+	--sh-identifier: var(--color-green-60);
+	--sh-sign: var(--color-gray-95);
+	--sh-property: var(--color-blue-80);
+	--sh-entity: var(--color-ciano-70);
 }

@@ -1,4 +1,5 @@
 "use client";
+import { useState } from "react";
 import { Container } from "@component/Container";
 import { BvIcon, BvIconName } from "bevi-icon";
 import { useIconSelectedContext } from "@bevi-icon/contexts/IconSelectedContext";
@@ -24,11 +25,29 @@ export const IconSelectedContent = () => {
     setWeightSelected,
   } = useIconSelectedContext();
   const { variant, weight } = useIconGlobalVariantContext();
+  const [reactCode, setReactCode] = useState<string>("");
 
   useEffect(() => {
     setVariantSelected(variant);
     setWeightSelected(weight);
+    console.log("variant: ", variant);
+    setReactCode(
+      `<BvIcon name=”${iconSelected.displayName}” ${variant !== "solid" && `variant=”${variant}”`} ${weight !== 400 && "weight={600}"} />`,
+    );
   }, [variant, weight]);
+
+  useEffect(() => {
+    const attrs = [
+      `name="${iconSelected.displayName}"`,
+      variantSelected !== "solid" ? `variant="${variantSelected}"` : null,
+      weightSelected !== 400 ? `weight={600}` : null,
+    ]
+      .filter(Boolean)
+      .join(" ");
+    setReactCode(
+      `<BvIcon ${attrs} />`,
+    );
+  }, [iconSelected, variantSelected, weightSelected]);
 
   return (
     <Container className="py-2xl flex flex-row gap-2xl">
@@ -124,13 +143,8 @@ export const IconSelectedContent = () => {
               />
             </LabelContent>
           </div>
-          <CopyBox
-            label="React"
-            value="<BvIcon name=”arrowFoward” variant=”solid” weight={400} />"
-          >
-            <CodeBlock language="html">
-              {`<BvIcon name=”arrowFoward” variant=”solid” weight={400} />`}
-            </CodeBlock>
+          <CopyBox label="React" value={reactCode}>
+            <CodeBlock language="html">{reactCode}</CodeBlock>
           </CopyBox>
           <div className="px-2xs">
             <LabelContent label="Tags">
