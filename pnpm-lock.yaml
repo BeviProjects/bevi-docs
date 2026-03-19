@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       bevi-icon:
-        specifier: ^2.0.10
-        version: 2.0.10
+        specifier: ^2.1.0
+        version: 2.1.0
       bevi-logo:
         specifier: file:./packages/bevi-logo-0.0.1
         version: file:packages/bevi-logo-0.0.1
@@ -718,8 +718,8 @@ packages:
     resolution: {integrity: sha512-B0xUquLkiGLgHhpPBqvl7GWegWBUNuujQ6kXd/r1U38ElPT6Ok8KZ8e+FpUGEc2ZoRQUzq/aUnaKFc/svWUGSg==}
     hasBin: true
 
-  bevi-icon@2.0.10:
-    resolution: {integrity: sha512-AyAcWGj/tmVOlWNWF3d/gBJAIaMTlwhBmkRQurVlo0Isxhb0NJJjgavX7SkNMfCozlTqVB8pGzkFo1FKH5d11w==}
+  bevi-icon@2.1.0:
+    resolution: {integrity: sha512-c5oiDcAP5GUfhEF6jW47u12+/jPU/08KZCEcd+qnob4mBzfAlCBg0t6wGQFSYr9/+3697PUzW+5TMxSzsiqG2g==}
 
   bevi-logo@file:packages/bevi-logo-0.0.1:
     resolution: {directory: packages/bevi-logo-0.0.1, type: directory}
@@ -1496,7 +1496,7 @@ snapshots:
 
   baseline-browser-mapping@2.9.14: {}
 
-  bevi-icon@2.0.10:
+  bevi-icon@2.1.0:
     dependencies:
       react: 19.2.3
       react-dom: 19.2.3(react@19.2.3)
