@@ -13,7 +13,7 @@
 	},
 	"dependencies": {
 		"bevi-icon": "^2.0.10",
-		"bevi-logo": "./bevi-logo-0.0.1.tgz",
+		"bevi-logo": "file:bevi-logo-0.0.1.tgz",
 		"next": "16.1.1",
 		"react": "19.2.3",
 		"react-dom": "19.2.3",
