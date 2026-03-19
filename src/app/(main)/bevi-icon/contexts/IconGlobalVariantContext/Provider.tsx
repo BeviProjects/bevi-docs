@@ -1,6 +1,7 @@
 "use client";
+import type { VariantType, WeightType } from "@bevi-icon/types/variants";
 import { createContext, type ReactNode, useState } from "react";
-import type { IconGlobalVariantType, VariantType, WeightType } from "./type";
+import type { IconGlobalVariantType } from "./type";
 
 export const IconGlobalVariantContext =
 	createContext<IconGlobalVariantType | null>(null);
