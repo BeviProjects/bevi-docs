@@ -1,7 +1,8 @@
 "use client";
 import { useEffect, useState, type ReactNode } from "react";
-import { useClipboard } from "@/hooks/useClipboard";
-import { Tooltip } from "@/components/Tooltip";
+import { useClipboard } from "@hook/useClipboard";
+import { Tooltip } from "@component/Tooltip";
+import { LabelContent } from "@component/LabelContent";
 
 type HeadingTag = "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
 
@@ -17,7 +18,7 @@ export const CopyBox = ({
   as: Tag = "h2",
   children,
   label,
-  size = 'text-2xl',
+  size = "text-2xl",
   value,
 }: CopyBoxProps) => {
   const { copy, isCopied, status } = useClipboard();
@@ -39,8 +40,7 @@ export const CopyBox = ({
         className="relative flex-start flex-col gap-4xs p-2xs rounded-xs cursor-pointer inset-ring-1 inset-ring-transparent hover:inset-ring-gray-85"
         onClick={() => copy(value)}
       >
-        <small className="text-sm text-gray-35 leading-none">{label}</small>
-        <Tag className={`${size} font-bold leading-none`}>{children}</Tag>
+        <LabelContent label={label}>{children}</LabelContent>
       </button>
     </Tooltip>
   );
