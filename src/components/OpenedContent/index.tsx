@@ -1,7 +1,3 @@
 export const OpenedContent = () => {
-  return (
-    <div>
-
-    </div>
-  )
+	return <div></div>;
 };

@@ -13,7 +13,7 @@ export type NavigationType = {
 };
 
 export const Homepage: NavigationType[] = [
-  {
+	{
 		id: "bevi-icon",
 		label: "bevi-icon",
 		href: routes.beviIcon,
@@ -23,7 +23,7 @@ export const Homepage: NavigationType[] = [
 		label: "bevi-logo",
 		href: routes.beviLogo,
 	},
-]
+];
 
 export const Header: NavigationType[] = [
 	{

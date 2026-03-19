@@ -1,21 +1,21 @@
 "use client";
 import { Header } from "@component/Header";
-import type { ReactNode } from "react";
 import { DrawerContext } from "@context/DrawerContext";
+import type { ReactNode } from "react";
 
 const MainLayout = ({
-  children,
+	children,
 }: Readonly<{
-  children: ReactNode;
+	children: ReactNode;
 }>) => {
-  return (
-    <div className="min-h-screen flex flex-row" data-vaul-drawer-wrapper="">
-      <DrawerContext.Provider>
-        <Header />
-        {children}
-      </DrawerContext.Provider>
-    </div>
-  );
+	return (
+		<div className="min-h-screen flex flex-row" data-vaul-drawer-wrapper="">
+			<DrawerContext.Provider>
+				<Header />
+				{children}
+			</DrawerContext.Provider>
+		</div>
+	);
 };
 
 export default MainLayout;

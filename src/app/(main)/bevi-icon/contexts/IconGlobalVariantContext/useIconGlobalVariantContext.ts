@@ -3,7 +3,7 @@ import { useContext } from "react";
 import { IconGlobalVariantContext } from "./Provider";
 import type { IconGlobalVariantType } from "./type";
 
-export const useIconGlobalVariantContext = () =>  {
+export const useIconGlobalVariantContext = () => {
 	const context = useContext(IconGlobalVariantContext);
 
 	if (context === null) {

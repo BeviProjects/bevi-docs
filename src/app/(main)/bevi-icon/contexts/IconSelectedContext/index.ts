@@ -1,7 +1,7 @@
 import { Provider } from "./Provider";
 
 export const IconSelected = {
-  Provider,
+	Provider,
 };
 
 export { useIconSelectedContext } from "./useIconSelectedContext";

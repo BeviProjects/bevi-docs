@@ -1,33 +1,33 @@
 {
-  "name": "bevi-docs",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "biome check",
-    "lint:fix": "biome check --write",
-    "format": "biome format --write",
-    "format:all": "biome check --write --unsafe"
-  },
-  "dependencies": {
-    "bevi-icon": "^2.0.10",
-    "bevi-logo": "file:bevi-logo-0.0.1.tgz",
-    "next": "16.1.1",
-    "react": "19.2.3",
-    "react-dom": "19.2.3",
-    "sugar-high": "^0.9.5",
-    "vaul": "^1.1.2"
-  },
-  "devDependencies": {
-    "@biomejs/biome": "2.2.0",
-    "@tailwindcss/postcss": "^4",
-    "@types/node": "^20",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
-    "sass": "^1.97.2",
-    "tailwindcss": "^4",
-    "typescript": "^5"
-  }
+	"name": "bevi-docs",
+	"version": "0.1.0",
+	"private": true,
+	"scripts": {
+		"dev": "next dev",
+		"build": "next build",
+		"start": "next start",
+		"lint": "biome check",
+		"lint:fix": "biome check --write",
+		"format": "biome format --write",
+		"format:all": "biome check --write --unsafe"
+	},
+	"dependencies": {
+		"bevi-icon": "^2.0.10",
+		"bevi-logo": "file:bevi-logo-0.0.1.tgz",
+		"next": "16.1.1",
+		"react": "19.2.3",
+		"react-dom": "19.2.3",
+		"sugar-high": "^0.9.5",
+		"vaul": "^1.1.2"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "2.2.0",
+		"@tailwindcss/postcss": "^4",
+		"@types/node": "^20",
+		"@types/react": "^19",
+		"@types/react-dom": "^19",
+		"sass": "^1.97.2",
+		"tailwindcss": "^4",
+		"typescript": "^5"
+	}
 }

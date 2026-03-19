@@ -1,7 +1,7 @@
 import { Provider } from "./Provider";
 
 export const DrawerContext = {
-  Provider,
+	Provider,
 };
 
 export { useDrawerContext } from "./useDrawerContext";

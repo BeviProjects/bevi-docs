@@ -1,8 +1,9 @@
 import { Provider } from "./Provider";
+
 export type { IconGlobalVariantType } from "./type";
 
 export const IconGlobalVariant = {
-  Provider,
+	Provider,
 };
 
 export { useIconGlobalVariantContext } from "./useIconGlobalVariantContext";

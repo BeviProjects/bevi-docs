@@ -1,24 +1,24 @@
+import { Footer } from "@component/Footer";
 import { LibSelectedProvider } from "@context/LibSelectedContext";
 import { type LogoRegistryType, logos } from "bevi-logo";
 import type { ReactNode } from "react";
 import { Suspense } from "react";
-import { Footer } from "@component/Footer";
 
 const BeviLogoLayout = ({
-  children,
+	children,
 }: Readonly<{
-  children: ReactNode;
+	children: ReactNode;
 }>) => {
-  return (
-    <Suspense>
-      <LibSelectedProvider<LogoRegistryType> initialData={logos}>
-        <div className="w-full">
-          <main className="flex-bgs pb-5xl">{children}</main>
-          <Footer total={logos.length} />
-        </div>
-      </LibSelectedProvider>
-    </Suspense>
-  );
+	return (
+		<Suspense>
+			<LibSelectedProvider<LogoRegistryType> initialData={logos}>
+				<div className="w-full">
+					<main className="flex-bgs pb-5xl">{children}</main>
+					<Footer total={logos.length} />
+				</div>
+			</LibSelectedProvider>
+		</Suspense>
+	);
 };
 
 export default BeviLogoLayout;

@@ -1,5 +1,5 @@
-import { VariantType } from "@bevi-icon/types/variants";
+import type { VariantType } from "@bevi-icon/types/variants";
 
-export const variantToSwitch = (variant: VariantType[]) => {
-  return "Works"
-}
+export const variantToSwitch = (_variant: VariantType[]) => {
+	return "Works";
+};

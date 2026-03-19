@@ -1,15 +1,15 @@
 "use client";
-import { BvLogo, type LogoRegistryType } from "bevi-logo";
 import { OverviewPageTemplate } from "@component/OverviewPageTemplate";
+import { BvLogo, type LogoRegistryType } from "bevi-logo";
 
 const BeviLogo = () => {
-  const handleClick = (selected: LogoRegistryType) => {
-    console.log(`Click: `, selected);
-  };
-  return (
-    <>
-      {/* Estado vazio — só aparece quando há busca ativa sem resultados */}
-      {/*{isFiltering && sortedLetters.length === 0 && (
+	const handleClick = (selected: LogoRegistryType) => {
+		console.log(`Click: `, selected);
+	};
+	return (
+		<>
+			{/* Estado vazio — só aparece quando há busca ativa sem resultados */}
+			{/*{isFiltering && sortedLetters.length === 0 && (
         <section>
           <Container size="full">
             <p>Nenhum resultado encontrado.</p>
@@ -50,20 +50,20 @@ const BeviLogo = () => {
         </Container>
       </section>*/}
 
-      <OverviewPageTemplate<LogoRegistryType>
-        onItemClick={handleClick}
-        btnMinHeight="min-h-[203px]"
-        renderItem={(logo) => (
-          <BvLogo
-            name={logo.displayName}
-            width={192}
-            height={171}
-            className="w-full"
-          />
-        )}
-      />
-    </>
-  );
+			<OverviewPageTemplate<LogoRegistryType>
+				onItemClick={handleClick}
+				btnMinHeight="min-h-[203px]"
+				renderItem={(logo) => (
+					<BvLogo
+						name={logo.displayName}
+						width={192}
+						height={171}
+						className="w-full"
+					/>
+				)}
+			/>
+		</>
+	);
 };
 
 export default BeviLogo;
