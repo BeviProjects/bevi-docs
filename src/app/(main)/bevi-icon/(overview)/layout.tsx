@@ -13,44 +13,43 @@ import { Switch } from "@/components/Switch";
 import { variantsSwitch, weightsSwitch } from "../data/variantsSwitch";
 
 const BeviIconLayout = ({
-	children,
+  children,
 }: Readonly<{
-	children: ReactNode;
+  children: ReactNode;
 }>) => {
-	const { sortedLetters } = useLibSelectedContext<BvIconRegistry>();
-	const [ref, { height }] = useElementSize<HTMLDivElement>();
-	const { variant, setVariant, weight, setWeight } =
-		useIconGlobalVariantContext();
+  const { sortedLetters } = useLibSelectedContext<BvIconRegistry>();
+  const [ref, { height }] = useElementSize<HTMLDivElement>();
+  const { variant, setVariant, weight, setWeight } =
+    useIconGlobalVariantContext();
 
-	return (
-		<IconSelected.Provider>
-			<ActionBar ref={ref}>
-				<div className="flex flex-col gap-2xs">
-					<div className="flex flex-row gap-2xs justify-between">
-						<SearchBar />
-						<div className="flex flex-row gap-2xs">
-							<Switch
-								data={weightsSwitch}
-								defaultValue={weight}
-								onChangeTransform={(item) => item.value as WeightType}
-								onChange={(selected) => setWeight(selected)}
-							/>
-							<Switch
-								data={variantsSwitch}
-								defaultValue={variant}
-								onChangeTransform={(item) => item.value as VariantType}
-								onChange={(selected) => setVariant(selected)}
-							/>
-						</div>
-					</div>
-					<div className="flex">
-						<AlphabeticLinks letters={sortedLetters} />
-					</div>
-				</div>
-			</ActionBar>
-			<div style={{ paddingTop: height }}>{children}</div>
-		</IconSelected.Provider>
-	);
+  return (
+    <IconSelected.Provider>
+      <ActionBar ref={ref}>
+        <div className="flex flex-col gap-2xs">
+          <div className="flex flex-col xl:flex-row gap-2xs">
+            <SearchBar />
+
+            <AlphabeticLinks letters={sortedLetters} />
+          </div>
+          <div className="flex flex-row gap-2xs">
+            <Switch
+              data={weightsSwitch}
+              defaultValue={weight}
+              onChangeTransform={(item) => item.value as WeightType}
+              onChange={(selected) => setWeight(selected)}
+            />
+            <Switch
+              data={variantsSwitch}
+              defaultValue={variant}
+              onChangeTransform={(item) => item.value as VariantType}
+              onChange={(selected) => setVariant(selected)}
+            />
+          </div>
+        </div>
+      </ActionBar>
+      <div style={{ paddingTop: height }}>{children}</div>
+    </IconSelected.Provider>
+  );
 };
 
 export default BeviIconLayout;

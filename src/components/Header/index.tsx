@@ -1,4 +1,5 @@
 import { Header as NavHeader } from "@config/navigation";
+import { BvIcon } from "bevi-icon";
 import Link from "next/link";
 
 export const Header = () => {
@@ -39,7 +40,10 @@ export const Header = () => {
 								fill="#222343"
 							/>
 						</svg>
-					</Link>
+          </Link>
+          {/*<button>
+            <BvIcon name="chevronLeft" />
+          </button>*/}
 				</div>
 				<nav className="w-full flex-bgs flex-start flex-col gap-2xl p-md bg-gray-95">
 					{NavHeader.map((item) => (

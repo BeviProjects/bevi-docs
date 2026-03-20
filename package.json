@@ -12,7 +12,7 @@
 		"format:all": "biome check --write --unsafe"
 	},
 	"dependencies": {
-		"bevi-icon": "^2.1.1",
+		"bevi-icon": "^2.1.2",
 		"bevi-logo": "file:./packages/bevi-logo-0.0.1",
 		"next": "16.1.1",
 		"react": "19.2.3",
