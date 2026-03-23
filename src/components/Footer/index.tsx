@@ -7,7 +7,7 @@ type FooterProps = {
 
 export const Footer = ({ children }: FooterProps) => {
 	return (
-		<footer className="w-full py-lg bg-gray-95 border-t border-solid border-gray-85">
+		<footer className="w-full bg-gray-95 border-t border-solid border-gray-85">
 			<Container size="full">{children}</Container>
 		</footer>
 	);

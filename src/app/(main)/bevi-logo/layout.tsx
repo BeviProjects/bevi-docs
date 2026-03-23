@@ -5,20 +5,20 @@ import type { ReactNode } from "react";
 import { Suspense } from "react";
 
 const BeviLogoLayout = ({
-	children,
+  children,
 }: Readonly<{
-	children: ReactNode;
+  children: ReactNode;
 }>) => {
-	return (
-		<Suspense>
-			<LibSelectedProvider<LogoRegistryType> initialData={logos}>
-				<div className="w-full">
-					<main className="flex-bgs pb-5xl">{children}</main>
-					<Footer total={logos.length} />
-				</div>
-			</LibSelectedProvider>
-		</Suspense>
-	);
+  return (
+    <Suspense>
+      <LibSelectedProvider<LogoRegistryType> initialData={logos}>
+        <div className="w-full">
+          <main className="flex-bgs pb-5xl">{children}</main>
+          <Footer>Test</Footer>
+        </div>
+      </LibSelectedProvider>
+    </Suspense>
+  );
 };
 
 export default BeviLogoLayout;
