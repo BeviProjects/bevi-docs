@@ -5,14 +5,15 @@ import { variantsSwitch, weightsSwitch } from "@bevi-icon/data/variantsSwitch";
 import type { VariantType, WeightType } from "@bevi-icon/types/variants";
 import { CodeBlock } from "@component/CodeBlock";
 import { Container } from "@component/Container";
+import { CopyBox } from "@component/CopyBox";
 import { CopySvgToClipboard } from "@component/CopySvgToClipboard";
 import { DownloadSvg } from "@component/DownloadSvg";
+import { InputColor } from "@component/InputColor";
 import { LabelContent } from "@component/LabelContent";
 import { Switch } from "@component/Switch";
 import { Tooltip } from "@component/Tooltip";
 import { BvIcon, type BvIconName } from "bevi-icon";
 import { useEffect, useState } from "react";
-import { CopyBox } from "@/components/CopyBox";
 
 export const IconSelectedContent = () => {
 	const {
@@ -22,6 +23,8 @@ export const IconSelectedContent = () => {
 		setVariantSelected,
 		weightSelected,
 		setWeightSelected,
+		colorSelected,
+		setColorSelected,
 	} = useIconSelectedContext();
 	const { variant, weight } = useIconGlobalVariantContext();
 	const [reactCode, setReactCode] = useState<string>("");
@@ -29,7 +32,6 @@ export const IconSelectedContent = () => {
 	useEffect(() => {
 		setVariantSelected(variant);
 		setWeightSelected(weight);
-		console.log("variant: ", variant);
 		setReactCode(
 			`<BvIcon name=”${iconSelected.displayName}” ${variant !== "solid" && `variant=”${variant}”`} ${weight !== 400 && "weight={600}"} />`,
 		);
@@ -58,6 +60,7 @@ export const IconSelectedContent = () => {
 						variant={variantSelected}
 						weight={weightSelected}
 						width={256}
+						style={{ color: colorSelected }}
 					/>
 				</div>
 				<div className="flex-center flex-row gap-2xs mt-2xs">
@@ -72,7 +75,7 @@ export const IconSelectedContent = () => {
             ring-4 ring-transparent hover:ring-gray-75
             cursor-pointer disabled:cursor-not-allowed`}
 					>
-						SVG <BvIcon name="download" width={16} />
+						SVG <BvIcon name="download" width={16} weight={600} />
 					</DownloadSvg>
 					<CopySvgToClipboard
 						targetRef={iconRef}
@@ -85,6 +88,7 @@ export const IconSelectedContent = () => {
             cursor-pointer disabled:cursor-not-allowed`}
 					>
 						Copiar
+						<BvIcon name="contentCopy" width={16} />
 					</CopySvgToClipboard>
 					{/*<button
               className={`
@@ -105,18 +109,39 @@ export const IconSelectedContent = () => {
 							{iconSelected.displayName}
 						</h2>
 					</CopyBox>
-					<Tooltip label="test">
-						<LabelContent label="Version">
-							<span
-								className={`
-                px-2xs pb-3xs pt-4xs
-                font-semibold leading-none text-gray-35
-                rounded-md inset-ring-1 inset-ring-gray-85`}
+					<div className="flex flex-row gap-2xs">
+						<Tooltip
+							label={iconSelected.metadata.createdAt.replaceAll("-", "/")}
+						>
+							<LabelContent label="Created">
+								<span
+									className={`
+                    px-2xs pb-3xs pt-4xs
+                    font-semibold leading-none text-gray-35
+                    rounded-md inset-ring-1 inset-ring-gray-85`}
+								>
+									{iconSelected.metadata.updatedIn}
+								</span>
+							</LabelContent>
+						</Tooltip>
+						{iconSelected.metadata.createdAt !==
+							iconSelected.metadata.updatedAt && (
+							<Tooltip
+								label={iconSelected.metadata.updatedAt.replaceAll("-", "/")}
 							>
-								{iconSelected.metadata.iconVersion}
-							</span>
-						</LabelContent>
-					</Tooltip>
+								<LabelContent label="Updated">
+									<span
+										className={`
+                    px-2xs pb-3xs pt-4xs
+                    font-semibold leading-none text-gray-35
+                    rounded-md inset-ring-1 inset-ring-gray-85`}
+									>
+										{iconSelected.metadata.updatedIn}
+									</span>
+								</LabelContent>
+							</Tooltip>
+						)}
+					</div>
 				</div>
 				<div className="w-full px-2xs pt-4xs">
 					<hr className="h-px bg-gray-75 border-none" />
@@ -137,6 +162,12 @@ export const IconSelectedContent = () => {
 								defaultValue={weightSelected ? weightSelected : 600}
 								onChangeTransform={(item) => item.value as WeightType}
 								onChange={(selected) => setWeightSelected(selected)}
+							/>
+						</LabelContent>
+						<LabelContent label="Color">
+							<InputColor
+								color={colorSelected}
+								onChange={(value) => setColorSelected(value)}
 							/>
 						</LabelContent>
 					</div>

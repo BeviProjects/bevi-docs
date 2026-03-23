@@ -10,4 +10,6 @@ export type IconSelectedContextType = {
 	setVariantSelected: (variant: VariantType) => void;
 	weightSelected: WeightType;
 	setWeightSelected: (weight: WeightType) => void;
+	colorSelected: string;
+	setColorSelected: (color: string) => void;
 };

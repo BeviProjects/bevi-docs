@@ -22,6 +22,13 @@ export const Provider = ({ children }: ProviderProps) => {
 	const [weightSelected, setWeightSelected] = useState<WeightType>(
 		{} as WeightType,
 	);
+	const [colorSelected, setColorSelected] = useState(
+		variantSelected === "solid" || variantSelected === "dark"
+			? "#222343"
+			: variantSelected === "light"
+				? "#25CBDB"
+				: "#222343",
+	);
 
 	return (
 		<IconSelectedContext.Provider
@@ -33,6 +40,8 @@ export const Provider = ({ children }: ProviderProps) => {
 				setVariantSelected,
 				weightSelected,
 				setWeightSelected,
+				colorSelected,
+				setColorSelected,
 			}}
 		>
 			{children}

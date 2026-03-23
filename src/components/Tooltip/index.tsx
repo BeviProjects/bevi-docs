@@ -2,12 +2,12 @@ import type { ReactNode } from "react";
 
 type TooltipProps = {
 	children: ReactNode;
-	label?: string;
+	label?: string | ReactNode;
 };
 
 export const Tooltip = ({ children, label = "Label" }: TooltipProps) => {
 	return (
-		<div className="tooltip relative group">
+		<div className="w-fit tooltip relative group">
 			<aside
 				className={`
           w-fit absolute left-1/2 top-0
@@ -15,7 +15,9 @@ export const Tooltip = ({ children, label = "Label" }: TooltipProps) => {
           flex-center py-6xs px-4xs
           opacity-0 group-hover:opacity-100
           transition-all duration-initial ease-in
-          rounded-5xs bg-white`}
+          rounded-4xs bg-white
+          inset-ring-1 inset-ring-gray-90
+          z-8`}
 			>
 				<span className="text-xs break-keep whitespace-pre text-gray-35">
 					{label}

@@ -19,7 +19,9 @@ const BeviIconLayout = ({
 				>
 					<div className="w-full bg-gray-95">
 						<main className="min-h-screen flex-bgs pb-5xl">{children}</main>
-						<Footer total={allBvIcons.length} />
+						<Footer>
+							<p>Total: {allBvIcons.length}</p>
+						</Footer>
 					</div>
 				</IconGlobalVariant.Provider>
 			</LibSelectedProvider>

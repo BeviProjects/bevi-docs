@@ -1,13 +1,14 @@
 import { Container } from "@component/Container";
+import type { ReactNode } from "react";
 
 type FooterProps = {
-	total?: number;
+	children?: ReactNode;
 };
 
-export const Footer = ({ total }: FooterProps) => {
+export const Footer = ({ children }: FooterProps) => {
 	return (
 		<footer className="w-full py-lg bg-gray-95 border-t border-solid border-gray-85">
-			<Container size="full">{total && `Total: ${total}`}</Container>
+			<Container size="full">{children}</Container>
 		</footer>
 	);
 };

@@ -5,4 +5,6 @@ export type IconGlobalVariantType = {
 	setVariant: (variant: VariantType) => void;
 	weight: WeightType;
 	setWeight: (weight: WeightType) => void;
+	color: string;
+	setColor: (color: string) => void;
 };
