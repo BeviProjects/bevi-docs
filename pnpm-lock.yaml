@@ -9,7 +9,7 @@ importers:
   .:
     dependencies:
       bevi-icon:
-        specifier: ^2.1.2
+        specifier: 2.1.2
         version: 2.1.2
       bevi-logo:
         specifier: file:./packages/bevi-logo-0.0.1
