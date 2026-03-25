@@ -1,7 +1,7 @@
 "use client";
 import { LabelContent } from "@component/LabelContent";
 import { Tooltip } from "@component/Tooltip";
-import { useClipboard } from "@hook/useClipboard";
+import useClipboard from "@hook/useClipboard";
 import { type ReactNode, useEffect, useState } from "react";
 
 type CopyBoxProps = {

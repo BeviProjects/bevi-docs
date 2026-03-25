@@ -47,6 +47,11 @@ export const Header: NavigationType[] = [
 				href: routes.beviIconInstallation,
 			},
 			{
+				id: "bi-usage",
+				label: "Usage",
+				href: routes.beviIconUsage,
+			},
+			{
 				id: "bi-collections",
 				label: "Collections",
 				href: routes.beviIconGettingStarted,

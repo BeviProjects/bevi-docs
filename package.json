@@ -12,11 +12,16 @@
 		"format:all": "biome check --write --unsafe"
 	},
 	"dependencies": {
+		"@mdx-js/loader": "^3.1.1",
+		"@mdx-js/react": "^3.1.1",
+		"@next/mdx": "^16.2.1",
+		"@types/mdx": "^2.0.13",
 		"bevi-icon": "2.1.2",
 		"bevi-logo": "file:./packages/bevi-logo-0.0.1",
 		"next": "16.1.1",
 		"react": "19.2.3",
 		"react-dom": "19.2.3",
+		"remark-gfm": "^4.0.1",
 		"sugar-high": "^0.9.5",
 		"vaul": "^1.1.2"
 	},

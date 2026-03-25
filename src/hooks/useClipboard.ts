@@ -19,7 +19,7 @@ interface UseClipboardReturn {
  * const { copy, status, isCopied } = useClipboard();
  * await copy("Texto copiado!");
  */
-export function useClipboard(): UseClipboardReturn {
+const useClipboard =(): UseClipboardReturn => {
 	const [status, setStatus] = useState<ClipboardStatus>("idle");
 
 	const copy = useCallback(async (text: string): Promise<void> => {
@@ -42,3 +42,5 @@ export function useClipboard(): UseClipboardReturn {
 
 	return { copy, status, isCopied };
 }
+
+export default useClipboard;

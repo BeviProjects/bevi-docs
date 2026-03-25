@@ -1,0 +1,135 @@
+import { BvIcon } from "bevi-icon";
+
+# Sobre o Bevi Icon
+
+O **bevi-icon** é a biblioteca de ícones oficial para projetos do universo [Bevi](https://www.bevioficial.com.br). Desenvolvida para padronizar e simplificar o uso da iconografia da marca, ela pode ser utilizada tanto em produtos internos quanto em aplicações externas da empresa.
+
+A biblioteca é construída para **React** com suporte nativo a **TypeScript**, garantindo tipagem segura e uma experiência de desenvolvimento mais confiável.
+
+## Quando usar
+
+O bevi-icon deve ser utilizado em qualquer projeto React que faça parte do ecossistema Bevi e precise exibir ícones com identidade visual da marca. Se o seu projeto usa React e precisa de ícones da Bevi, essa é a forma correta e recomendada de fazê-lo.
+
+## Variants (Variantes)
+
+Os ícones estão disponíveis em **4 variantes**, cada uma pensada para um contexto visual diferente. Escolher a variante adequada é essencial para manter a consistência e a clareza da interface.
+
+<div className="flex-start flex-col gap-2xl">
+	<div className="flex-center flex-row gap-2xl p-md rounded-2xl inset-ring-1 inset-ring-gray-75">
+		<div className="flex-center p-md rounded-md inset-ring-1 inset-ring-gray-90 bg-white">
+			<BvIcon name="eco" className="size-9xl text-violet-20" />
+		</div>
+
+		<div className="flex-bgs">
+			### Solid
+
+			Ícone em cor única e totalmente personalizável. É a variante
+			mais versátil — funciona bem em textos, botões e qualquer
+			situação onde o ícone precisa se adaptar à cor do contexto.
+			
+			<ul className="flex flex-col gap-4xs">
+				<li className="inline-flex flex-row items-center gap-4xs">
+					<BvIcon name="checkCircle" width={16} />
+					<p>Cor personalizável</p>
+				</li>
+				<li className="inline-flex flex-row items-center gap-4xs">
+					<BvIcon name="checkCircle" width={16} />
+					<p>Ideal para tamanhos pequenos</p>
+				</li>
+				<li className="inline-flex flex-row items-center gap-4xs">
+					<BvIcon name="checkCircle" width={16} />
+					<p>Ideal para uso junto ao texto</p>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<div className="flex-center flex-row gap-2xl p-md rounded-2xl inset-ring-1 inset-ring-gray-75">
+		<div className="flex-center p-md rounded-md inset-ring-1 inset-ring-gray-90 bg-white">
+			<BvIcon name="eco" variant="duo" className="size-9xl" />
+		</div>
+
+		<div className="flex-bgs">
+			### Duo
+
+			Ícone em dois tons, variando entre as cores primária e secundária da Bevi com diferentes níveis de opacidade. Por respeitar a identidade visual da marca, **não permite alteração de cor**.
+			
+			<ul className="flex flex-col gap-4xs">
+				<li className="inline-flex flex-row items-center gap-4xs">
+					<BvIcon name="checkCircle" width={16} />
+					<p>Ideal para tamanhos grandes</p>
+				</li>
+				<li className="inline-flex flex-row items-center gap-4xs">
+					<BvIcon name="checkCircle" width={16} />
+					<p>Ideal para cards, banners e ilustrações de apoio</p>
+				</li>
+				<li className="inline-flex flex-row items-center gap-4xs">
+					<BvIcon name="cancel" width={16} />
+					<p>Cor não personalizável</p>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<div className="flex-center flex-row gap-2xl p-md rounded-2xl inset-ring-1 inset-ring-gray-75">
+		<div className="flex-center p-md rounded-md inset-ring-1 inset-ring-gray-90 bg-white">
+			<BvIcon
+				name="eco"
+				variant="dark"
+				className="size-9xl text-violet-20"
+			/>
+		</div>
+
+		<div className="flex-bgs">
+			### Dark
+
+			Ícone escuro com opacidade variável quando necessário. Totalmente personalizável em cor e pensado para ser usado sobre **fundos claros**.
+			
+			<ul className="flex flex-col gap-2xs">
+				<li className="inline-flex flex-row items-center gap-4xs">
+					<BvIcon name="checkCircle" width={16} />
+					<p>Cor personalizável</p>
+				</li>
+				<li className="inline-flex flex-row items-center gap-4xs">
+					<BvIcon name="checkCircle" width={16} />
+					<p>Ideal para fundos claros</p>
+				</li>
+				<li className="inline-flex flex-row items-center gap-4xs">
+					<BvIcon name="checkCircle" width={16} />
+					<p>Funciona bem em tamanhos pequenos e grandes</p>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<div className="flex-center flex-row gap-2xl p-md rounded-2xl inset-ring-1 inset-ring-gray-75">
+		<div className="flex-center p-md rounded-md inset-ring-1 inset-ring-gray-90 bg-white">
+			<BvIcon
+				name="eco"
+				variant="light"
+				className="size-9xl text-ciano-50"
+			/>
+		</div>
+
+		<div className="flex-bgs">
+			### Light
+
+			Ícone claro com opacidade variável quando necessário. Totalmente personalizável em cor e pensado para ser usado sobre **fundos escuros**.
+			
+			<ul className="flex flex-col gap-2xs">
+				<li className="inline-flex flex-row items-center gap-4xs">
+					<BvIcon name="checkCircle" width={16} />
+					<p>Cor personalizável</p>
+				</li>
+				<li className="inline-flex flex-row items-center gap-4xs">
+					<BvIcon name="checkCircle" width={16} />
+					<p>Ideal para fundos escuros</p>
+				</li>
+				<li className="inline-flex flex-row items-center gap-4xs">
+					<BvIcon name="checkCircle" width={16} />
+					<p>Funciona bem em tamanhos pequenos e grandes</p>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>

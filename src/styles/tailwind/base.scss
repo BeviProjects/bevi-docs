@@ -1,14 +1,18 @@
 @layer base {
+    body{
+        @apply text-gray-25;
+    }
+
     h1,
     h2,
     h3,
     h4,
     h5,
     h6 {
-        @apply leading-none font-semibold text-violet-20 pt-md pb-2xs
+        @apply leading-none font-semibold text-violet-20
     }
 
-    h1 {
+    /* h1 {
         @apply text-3xl;
     }
 
@@ -33,6 +37,6 @@
     }
 
     p{
-        @apply mb-2xs text-violet-20;
-    }
+        @apply mb-2xs text-gray-25;
+        } */
 }

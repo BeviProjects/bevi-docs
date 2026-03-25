@@ -1,0 +1,38 @@
+
+
+# Utilizando a biblioteca
+
+## Importação
+
+Após instalar a biblioteca, importe o componente `BvIcon` no arquivo onde deseja utilizá-lo:
+
+```ts
+import { BvIcon } from 'bevi-icon'
+```
+
+## Uso básico
+
+Para exibir um ícone, basta passar o nome dele pela prop `name`:
+```tsx
+<BvIcon name='eco' />
+```
+
+Sem nenhuma outra configuração, o ícone será renderizado com a variante **solid**, peso **400** e tamanho **32x32**.
+
+---
+
+## Uso avançado
+
+O componente aceita props adicionais para personalização. Você pode combinar variante, peso, tamanho e título de acessibilidade conforme a necessidade do seu projeto:
+
+```tsx
+<BvIcon name='eco' variant='duo' width={42} height={42} title='Ícone de folha'/>
+```
+
+## Props
+
+| Nome       | Idade | Cidade    |
+|------------|-------|-----------|
+| Ana        | 28    | São Paulo |
+| **Carlos** | 34    | Curitiba  |
+| Maria      | 22    | Recife    |

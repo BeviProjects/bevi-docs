@@ -11,7 +11,7 @@ export type IconErrorType = {
 };
 
 const Installation = () => {
-	const _test = (error: IconErrorType) => {
+	const test = (error: IconErrorType) => {
 		console.error(error);
 	};
 
