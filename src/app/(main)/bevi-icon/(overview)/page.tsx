@@ -17,12 +17,15 @@ const BeviIcon = () => {
 	const { setIconSelected } = useIconSelectedContext();
 	const router = useRouter();
 	const searchParams = useSearchParams();
-	const isMounted = useRef(false);
+	const _isMounted = useRef(false);
 	const searchParamsRef = useRef(searchParams);
 
 	const initialVariantRef = useRef(variant);
 	const initialWeightRef = useRef(weight);
 	const hasInteractedRef = useRef(false);
+
+	const isInitialMountRef = useRef(false);
+	const isSyncReadyRef = useRef(false);
 
 	if (
 		!hasInteractedRef.current &&
@@ -63,24 +66,25 @@ const BeviIcon = () => {
 
 	// Abre o drawer se houver ?icon= na URL ao montar
 	useEffect(() => {
-		const iconParam = searchParams.get("icon");
-		if (!iconParam || isMounted.current) return; // só na montagem
+		if (isInitialMountRef.current) return;
+		isInitialMountRef.current = true;
+
+		const iconParam = searchParams.get("icon"); // ✅ lê o valor aqui
+		if (!iconParam) return;
 
 		const found = allBvIcons.find((icon) => icon.displayName === iconParam);
 		if (found) {
 			setIconSelected(found);
 			setToggle(true);
 		}
-		isMounted.current = true;
 	}, [searchParams.get, setIconSelected, setToggle]); // ← roda só uma vez, na montagem
 
 	// Sincroniza o fechamento do drawer com a URL
 	useEffect(() => {
-		if (!isMounted.current) {
-			isMounted.current = true;
+		if (!isSyncReadyRef.current) {
+			isSyncReadyRef.current = true;
 			return;
 		}
-
 		if (!toggle) closeDrawer();
 	}, [toggle, closeDrawer]);
 

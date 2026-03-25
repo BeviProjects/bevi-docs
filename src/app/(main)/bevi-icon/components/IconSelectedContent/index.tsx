@@ -164,12 +164,14 @@ export const IconSelectedContent = () => {
 								onChange={(selected) => setWeightSelected(selected)}
 							/>
 						</LabelContent>
-						<LabelContent label="Color">
-							<InputColor
-								color={colorSelected}
-								onChange={(value) => setColorSelected(value)}
-							/>
-						</LabelContent>
+						{variantSelected !== "duo" && (
+							<LabelContent label="Color">
+								<InputColor
+									color={colorSelected}
+									onChange={(value) => setColorSelected(value)}
+								/>
+							</LabelContent>
+						)}
 					</div>
 					<CopyBox label="React" value={reactCode}>
 						<CodeBlock language="html">{reactCode}</CodeBlock>

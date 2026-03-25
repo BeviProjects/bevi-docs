@@ -46,10 +46,12 @@ const BeviIconLayout = ({
 							onChange={(selected) => setVariant(selected)}
 						/>
 
-						<InputColor
-							color={color}
-							onChange={(selected) => setColor(selected)}
-						/>
+						{variant !== "duo" && (
+							<InputColor
+								color={color}
+								onChange={(selected) => setColor(selected)}
+							/>
+						)}
 					</div>
 				</div>
 			</ActionBar>

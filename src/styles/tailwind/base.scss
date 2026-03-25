@@ -1,0 +1,38 @@
+@layer base {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        @apply leading-none font-semibold text-violet-20 pt-md pb-2xs
+    }
+
+    h1 {
+        @apply text-3xl;
+    }
+
+    h2 {
+        @apply text-2xl;
+    }
+
+    h3 {
+        @apply text-xl;
+    }
+
+    h4 {
+        @apply text-lg;
+    }
+
+    h5 {
+        @apply text-md;
+    }
+
+    h6 {
+        @apply text-sm;
+    }
+
+    p{
+        @apply mb-2xs text-violet-20;
+    }
+}
