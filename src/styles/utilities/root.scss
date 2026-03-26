@@ -1,5 +1,6 @@
-@use '../abstracts/mixins.scss' as mixin;
+@use "../abstracts/mixins.scss" as mixin;
 
-:root{
-  @include mixin.size-variables-generator();
+:root {
+    interpolate-size: allow-keywords;
+    @include mixin.size-variables-generator();
 }

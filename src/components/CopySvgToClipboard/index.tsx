@@ -6,13 +6,15 @@ import type { ReactNode, RefObject } from "react";
 type CopySvgToClipboardProps = {
 	targetRef: RefObject<HTMLDivElement | null>;
 	className?: string;
-	children: ReactNode;
+  children: ReactNode;
+  color?: string;
 };
 
 export const CopySvgToClipboard = ({
 	children,
 	className,
-	targetRef,
+  targetRef,
+	color
 }: CopySvgToClipboardProps) => {
 	const { copy } = useClipboard();
 
@@ -27,9 +29,24 @@ export const CopySvgToClipboard = ({
 		if (!svgElement) {
 			console.warn("CopySvgButton: nenhum <svg> encontrado dentro da ref.");
 			return;
-		}
+    }
 
-		await copy(svgElement.outerHTML);
+		if (!color) {
+      await copy(svgElement.outerHTML);
+      return;
+    }
+
+		const svgClone = svgElement.cloneNode(true) as SVGElement;
+
+    const colorableElements = svgClone.querySelectorAll<SVGElement>(
+      "path, circle, rect, ellipse, line, polyline, polygon"
+    );
+
+    colorableElements.forEach((el) => {
+      el.setAttribute("fill", `#${color}`);
+    });
+
+    await copy(svgClone.outerHTML);
 	};
 
 	return (

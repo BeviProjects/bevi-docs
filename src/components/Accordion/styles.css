@@ -1,0 +1,26 @@
+details {
+    border: 1px solid gray;
+    overflow: hidden;
+    padding: 0.5rem 1rem;
+    margin: 0;
+}
+
+details::details-content {
+    background-color: red;
+    font-size: 1rem;
+    block-size: 0;
+
+    transition:
+        block-size 1s,
+        content-visibility 1s;
+
+    transition-behavior: allow-discrete;
+}
+
+details[open]::details-content {
+    block-size: auto;
+}
+
+details .content {
+    padding: 1rem;
+}

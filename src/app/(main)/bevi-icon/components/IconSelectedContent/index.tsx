@@ -49,10 +49,10 @@ export const IconSelectedContent = () => {
 	}, [iconSelected, variantSelected, weightSelected]);
 
 	return (
-		<Container className="py-2xl flex flex-row gap-2xl">
+		<Container className="py-2xl flex-start flex-row gap-2xl">
 			<div className="p-2xs bg-gray-95 rounded-md">
 				<div
-					className="size-10xl bg-white inset-ring-1 inset-ring-gray-90 rounded-2xs"
+					className="size-10xl p-md bg-white inset-ring-1 inset-ring-gray-90 rounded-2xs"
 					ref={iconRef}
 				>
 					<BvIcon
@@ -60,7 +60,8 @@ export const IconSelectedContent = () => {
 						variant={variantSelected}
 						weight={weightSelected}
 						width={256}
-						style={{ color: colorSelected }}
+            style={{ color: colorSelected }}
+            className="w-full h-auto"
 					/>
 				</div>
 				<div className="flex-center flex-row gap-2xs mt-2xs">
@@ -86,7 +87,8 @@ export const IconSelectedContent = () => {
             rounded-2xs bg-gray-98
             ring-4 ring-transparent hover:ring-gray-75
             cursor-pointer disabled:cursor-not-allowed`}
-					>
+						color={colorSelected}
+          >
 						Copiar
 						<BvIcon name="contentCopy" width={16} />
 					</CopySvgToClipboard>
@@ -102,7 +104,7 @@ export const IconSelectedContent = () => {
             </button>*/}
 				</div>
 			</div>
-			<div className="content w-full py-2xs flex-start flex-col">
+			<div className="content flex-bgs w-full py-2xs flex-start flex-col">
 				<div className="w-full flex flex-row justify-between items-start">
 					<CopyBox label="Display name" value={iconSelected.displayName}>
 						<h2 className="text-2xl font-bold leading-none">
@@ -146,8 +148,8 @@ export const IconSelectedContent = () => {
 				<div className="w-full px-2xs pt-4xs">
 					<hr className="h-px bg-gray-75 border-none" />
 				</div>
-				<div className="flex flex-col gap-md pt-2xl">
-					<div className="flex flex-row gap-md px-2xs">
+				<div className="flex flex-col gap-md px-2xs pt-2xl">
+					<div className="flex flex-row gap-md">
 						<LabelContent label="Variant">
 							<Switch
 								data={variantsSwitch}
@@ -172,11 +174,11 @@ export const IconSelectedContent = () => {
 								/>
 							</LabelContent>
 						)}
-					</div>
-					<CopyBox label="React" value={reactCode}>
-						<CodeBlock language="html">{reactCode}</CodeBlock>
-					</CopyBox>
-					<div className="px-2xs">
+          </div>
+					<LabelContent label="React">
+						<CodeBlock language="html" className="mb-px">{reactCode}</CodeBlock>
+					</LabelContent>
+					<div>
 						<LabelContent label="Tags">
 							<div className="flex flex-row gap-4xs">
 								{iconSelected.tags.map((tag) => (

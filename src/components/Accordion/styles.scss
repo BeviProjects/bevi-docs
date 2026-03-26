@@ -1,0 +1,24 @@
+details {
+    transition: background-color 0.24s;
+
+    &::details-content {
+        block-size: 0;
+        transition: block-size 0.24s, content-visibility 0.24s;
+        transition-behavior: allow-discrete;
+    }
+
+    &[open]{
+        background-color: white;
+        --tw-inset-ring-color: var(--color-gray-75);
+    }
+
+    &[open]::details-content {
+        block-size: auto;
+    }
+
+    summary {
+        &::marker {
+            content: "";
+        }
+    }
+}

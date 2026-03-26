@@ -6,12 +6,14 @@ import { highlight } from "sugar-high";
 
 export type CodeBlockProps = {
 	children: string;
-	language?: string;
+  language?: string;
+  className?: string
 };
 
 export const CodeBlock = ({
 	children,
-	language = "typescript",
+  language = "typescript",
+	className
 }: CodeBlockProps) => {
 	const highlightedCode = highlight(children);
 	const [copied, setCopied] = useState(false);
@@ -34,6 +36,7 @@ export const CodeBlock = ({
         rounded-2xs bg-gray-25
         whitespace-pre-wrap break-all
         inset-ring-1 inset-ring-gray-10
+        ${className}
       `}
 		>
 			<code
