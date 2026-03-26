@@ -114,8 +114,8 @@ export function useMDXComponents(): MDXComponents {
 					</thead>
 				)}
 				<tbody>
-					{data.rows.map((row) => (
-						<tr key={row}>
+					{data.rows.map((row, index) => (
+						<tr key={index}>
 							{row.map((cell) => (
 								<td key={cell} className="px-2xs py-4xs border border-gray-85">
 									{cell}
