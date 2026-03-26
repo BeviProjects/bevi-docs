@@ -33,27 +33,27 @@ export const Header: NavigationType[] = [
 		children: [
 			{
 				id: "bi-overview",
-				label: "Overview",
+				label: "Ícones",
 				href: routes.beviIcon,
 			},
 			{
 				id: "bi-getting-started",
-				label: "Getting Started",
+				label: "O que é",
 				href: routes.beviIconGettingStarted,
 			},
 			{
 				id: "bi-installation",
-				label: "Installation",
+				label: "Instalação",
 				href: routes.beviIconInstallation,
 			},
 			{
 				id: "bi-usage",
-				label: "Usage",
+				label: "Como usar",
 				href: routes.beviIconUsage,
 			},
 			{
 				id: "bi-collections",
-				label: "Collections",
+				label: "Coleções",
 				href: routes.beviIconGettingStarted,
 			},
 		],

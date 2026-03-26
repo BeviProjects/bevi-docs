@@ -133,3 +133,44 @@ Os ícones estão disponíveis em **4 variantes**, cada uma pensada para um cont
 		</div>
 	</div>
 </div>
+
+
+## Weight (pesos)
+
+Alguns ícones suportam variação de **peso**, permitindo ajustar a espessura do traço de acordo com o contexto visual.
+
+<div className="flex flex-row gap-2xl">
+	<div className="flex-bgs flex-center flex-col p-md rounded-2xl inset-ring-1 inset-ring-gray-75">
+		<div className="w-full flex-center p-md rounded-md inset-ring-1 inset-ring-gray-90 bg-white">
+			<BvIcon
+				name="arrowNorthEast"
+				weight={400}
+				className="size-9xl text-violet-20"
+			/>
+		</div>
+
+		<div className="flex-bgs px-md">
+			### Regular (400)
+
+			Traço mais fino. Indicado para interfaces que priorizam leveza e
+			sutileza visual.
+		</div>
+	</div>
+
+	<div className="flex-bgs flex-center flex-col p-md rounded-2xl inset-ring-1 inset-ring-gray-75">
+		<div className="w-full flex-center p-md rounded-md inset-ring-1 inset-ring-gray-90 bg-white">
+			<BvIcon
+				name="arrowNorthEast"
+				weight={600}
+				className="size-9xl text-violet-20"
+			/>
+		</div>
+
+		<div className="flex-bgs px-md">
+			### Bold (600)
+
+			Traço mais espesso. Recomendado quando o ícone precisa de mais
+			destaque ou será exibido em tamanhos maiores.
+		</div>
+	</div>
+</div>

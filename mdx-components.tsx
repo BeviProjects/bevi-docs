@@ -3,15 +3,15 @@ import { Container } from "@component/Container";
 import { CodeBlock, type CodeBlockProps } from "@/components/CodeBlock";
 import type { MDXComponents } from "mdx/types";
 
+const components: MDXComponents = {};
+
 type HeadingProps = ComponentPropsWithoutRef<"h1">;
 type ListProps = ComponentPropsWithoutRef<"ul">;
 type AnchorProps = ComponentPropsWithoutRef<"a">;
 
-
-export function useMDXComponents(components: MDXComponents): MDXComponents {
+export function useMDXComponents(): MDXComponents {
   return {
     ...components,
-
     wrapper: ({ children }: { children: ReactNode }) => (
       <Container size="sm" className="py-6xl">
         {children}
@@ -40,11 +40,16 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     ),
     ol: (props: ListProps) => <ol className="mb-md" {...props} />,
     ul: (props: ListProps) => <ul className="mb-md" {...props} />,
-    li: (props: ComponentPropsWithoutRef<"li">) => <li className="mb-4xs" {...props} />,
+    li: (props: ComponentPropsWithoutRef<"li">) => (
+      <li className="mb-4xs" {...props} />
+    ),
     em: (props: ComponentPropsWithoutRef<"em">) => <em {...props} />,
-    strong: (props: ComponentPropsWithoutRef<"strong">) => <strong {...props} />,
+    strong: (props: ComponentPropsWithoutRef<"strong">) => (
+      <strong {...props} />
+    ),
     a: ({ href, children, ...props }: AnchorProps) => {
-      const className = "underline text-blue-45 hover:text-blue-80 font-semibold";
+      const className =
+        "underline text-blue-45 hover:text-blue-80 font-semibold";
       if (href?.startsWith("/")) {
         return (
           <a href={href} className={className} {...props}>
@@ -79,7 +84,8 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     ),
     pre: ({ children, ...props }: ComponentPropsWithoutRef<"pre">) => {
       // Extrai as props do <code> filho para pegar a linguagem
-      const codeProps = (children as React.ReactElement)?.props as CodeBlockProps;
+      const codeProps = (children as React.ReactElement)
+        ?.props as CodeBlockProps;
 
       return (
         <CodeBlock language={codeProps?.language}>
@@ -88,14 +94,20 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
       );
     },
     table: (props: ComponentPropsWithoutRef<"table">) => (
-      <table className="mb-md border-collapse border border-gray-85" {...props} />
+      <table
+        className="mb-md border-collapse border border-gray-85"
+        {...props}
+      />
     ),
     thead: (props: ComponentPropsWithoutRef<"thead">) => <thead {...props} />,
     tbody: (props: ComponentPropsWithoutRef<"tbody">) => <tbody {...props} />,
     tfoot: (props: ComponentPropsWithoutRef<"tfoot">) => <tfoot {...props} />,
     tr: (props: ComponentPropsWithoutRef<"tr">) => <tr {...props} />,
     th: (props: ComponentPropsWithoutRef<"th">) => (
-      <th className="px-2xs py-4xs border border-gray-85 bg-gray-90" {...props} />
+      <th
+        className="px-2xs py-4xs border border-gray-85 bg-gray-90"
+        {...props}
+      />
     ),
     td: (props: ComponentPropsWithoutRef<"td">) => (
       <td className="px-2xs py-4xs border border-gray-85" {...props} />
@@ -106,5 +118,5 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     hr: (props: ComponentPropsWithoutRef<"hr">) => (
       <hr className="border-none h-px mt-lg mb-2xl bg-gray-85" {...props} />
     ),
-  }
+  };
 }

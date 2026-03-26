@@ -1,4 +1,4 @@
-
+import { BvIcon } from "bevi-icon";
 
 # Utilizando a biblioteca
 
@@ -31,8 +31,13 @@ O componente aceita props adicionais para personalização. Você pode combinar 
 
 ## Props
 
-| Nome       | Idade | Cidade    |
-|------------|-------|-----------|
-| Ana        | 28    | São Paulo |
-| **Carlos** | 34    | Curitiba  |
-| Maria      | 22    | Recife    |
+
+
+| Prop      | Tipo                                    | Padrão    | Obrigatório                              | Descrição                                                  |
+| --------- | --------------------------------------- | --------- | ---------------------------------------- | ---------------------------------------------------------- |
+| `name`    |  string                                 | —         | <BvIcon name="checkCircle" width={16} /> | O nome do ícone a ser exibido                              |
+| `variant` |  'solid' \| 'duo' \| 'dark' \| 'light'  |  'solid'  | <BvIcon name="cancel" width={16} />      | A variante visual do ícone                                 |
+| `weight`  |  400 \| 600                             |  400      | <BvIcon name="cancel" width={16} />      | O peso do traço do ícone                                   |
+| `width`   |  number                                 |  32       | <BvIcon name="cancel" width={16} />      | A largura do SVG em pixels                                 |
+| `height`  |  number                                 |  32       | <BvIcon name="cancel" width={16} />      | A altura do SVG em pixels                                  |
+| `title`   |  string                                 | —         | <BvIcon name="cancel" width={16} />      | Insere uma tag `<title>` dentro do SVG para acessibilidade |
