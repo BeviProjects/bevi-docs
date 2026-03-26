@@ -1,20 +1,18 @@
-// next.config.ts
-import type { NextConfig } from "next";
 import createMDX from "@next/mdx";
-import remarkGfm from "remark-gfm"; // Importe o plugin
+import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
-  output: "export",
-  images: { unoptimized: true },
+	pageExtensions: ["js", "jsx", "md", "mdx", "ts", "tsx"],
+	output: "export",
+	images: { unoptimized: true },
+	// Opcional: Garante que o Turbopack não tente serializar plugins JS antigos
+	experimental: {
+		// Se estiver usando o compilador Rust, ele já entende tabelas por padrão
+		mdxRs: true,
+	},
 };
 
-const withMDX = createMDX({
-  options: {
-    // Adicione o plugin aqui para habilitar tabelas, tasklists, etc.
-    remarkPlugins: [remarkGfm],
-    rehypePlugins: [],
-  },
-});
+// Não passe o remarkPlugins aqui, o mdxRs cuidará das tabelas
+const withMDX = createMDX({});
 
 export default withMDX(nextConfig);

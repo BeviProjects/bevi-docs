@@ -7,14 +7,15 @@ import { BvIcon } from "bevi-icon";
 Após instalar a biblioteca, importe o componente `BvIcon` no arquivo onde deseja utilizá-lo:
 
 ```ts
-import { BvIcon } from 'bevi-icon'
+import { BvIcon } from "bevi-icon";
 ```
 
 ## Uso básico
 
 Para exibir um ícone, basta passar o nome dele pela prop `name`:
+
 ```tsx
-<BvIcon name='eco' />
+<BvIcon name="eco" />
 ```
 
 Sem nenhuma outra configuração, o ícone será renderizado com a variante **solid**, peso **400** e tamanho **32x32**.
@@ -26,18 +27,27 @@ Sem nenhuma outra configuração, o ícone será renderizado com a variante **so
 O componente aceita props adicionais para personalização. Você pode combinar variante, peso, tamanho e título de acessibilidade conforme a necessidade do seu projeto:
 
 ```tsx
-<BvIcon name='eco' variant='duo' width={42} height={42} title='Ícone de folha'/>
+<BvIcon
+  name="eco"
+  variant="duo"
+  width={42}
+  height={42}
+  title="Ícone de folha"
+/>
 ```
 
 ## Props
 
+export const tableData = {
+  headers: ["Prop", "Tipo", "Padrão", "Obrigatório", "Descrição"],
+  rows: [
+    [<code className="px-5xs font-mono text-violet-80 rounded-4xs bg-gray-25">name</code>, "string", "—", <BvIcon name="checkCircle" width={16} />, "O nome do ícone a ser exibido"],
+    [<code className="px-5xs font-mono text-violet-80 rounded-4xs bg-gray-25">variant</code>, "'solid' | 'duo' | 'dark' | 'light'", "solid", <BvIcon name="cancel" width={16} />, "A variante visual do ícone"],
+    [<code className="px-5xs font-mono text-violet-80 rounded-4xs bg-gray-25">weight</code>, "400 | 600", "400", <BvIcon name="cancel" width={16} />, "O peso do traço do ícone"],
+    [<code className="px-5xs font-mono text-violet-80 rounded-4xs bg-gray-25">width</code>, "number", "32", <BvIcon name="cancel" width={16} />, "A largura do SVG em pixels"],
+    [<code className="px-5xs font-mono text-violet-80 rounded-4xs bg-gray-25">height</code>, "number", "32", <BvIcon name="cancel" width={16} />, "A altura do SVG em pixels"],
+    [<code className="px-5xs font-mono text-violet-80 rounded-4xs bg-gray-25">title</code>, "string", "—", <BvIcon name="cancel" width={16} />, "Insere uma tag `<title>` dentro do SVG para acessibilidade"],
+  ],
+};
 
-
-| Prop      | Tipo                                    | Padrão    | Obrigatório                              | Descrição                                                  |
-| --------- | --------------------------------------- | --------- | ---------------------------------------- | ---------------------------------------------------------- |
-| `name`    |  string                                 | —         | <BvIcon name="checkCircle" width={16} /> | O nome do ícone a ser exibido                              |
-| `variant` |  'solid' \| 'duo' \| 'dark' \| 'light'  |  'solid'  | <BvIcon name="cancel" width={16} />      | A variante visual do ícone                                 |
-| `weight`  |  400 \| 600                             |  400      | <BvIcon name="cancel" width={16} />      | O peso do traço do ícone                                   |
-| `width`   |  number                                 |  32       | <BvIcon name="cancel" width={16} />      | A largura do SVG em pixels                                 |
-| `height`  |  number                                 |  32       | <BvIcon name="cancel" width={16} />      | A altura do SVG em pixels                                  |
-| `title`   |  string                                 | —         | <BvIcon name="cancel" width={16} />      | Insere uma tag `<title>` dentro do SVG para acessibilidade |
+<Table data={tableData} />

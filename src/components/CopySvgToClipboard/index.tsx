@@ -1,7 +1,7 @@
 "use client";
 
-import type { ReactNode, RefObject } from "react";
 import useClipboard from "@hook/useClipboard";
+import type { ReactNode, RefObject } from "react";
 
 type CopySvgToClipboardProps = {
 	targetRef: RefObject<HTMLDivElement | null>;

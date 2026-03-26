@@ -1,48 +1,49 @@
 "use client";
-import { useState } from "react";
-import { BvIcon } from "bevi-icon";
-import { highlight } from "sugar-high";
 import useClipboard from "@hook/useClipboard";
+import { BvIcon } from "bevi-icon";
+import { useState } from "react";
+import { highlight } from "sugar-high";
 
 export type CodeBlockProps = {
-  children: string;
-  language?: string;
+	children: string;
+	language?: string;
 };
 
 export const CodeBlock = ({
-  children,
-  language = "typescript",
+	children,
+	language = "typescript",
 }: CodeBlockProps) => {
-  const highlightedCode = highlight(children);
-  const [copied, setCopied] = useState(false);
-  const { copy } = useClipboard();
+	const highlightedCode = highlight(children);
+	const [copied, setCopied] = useState(false);
+	const { copy } = useClipboard();
 
-  const clickToCopy = () => {
-    setCopied(true);
-    copy(children);
-    setTimeout(() => {
-      setCopied(false);
-    }, 4000);
-  };
+	const clickToCopy = () => {
+		setCopied(true);
+		copy(children);
+		setTimeout(() => {
+			setCopied(false);
+		}, 4000);
+	};
 
-  return (
-    <pre
-      data-language={language}
-      className={`
+	return (
+		<pre
+			data-language={language}
+			className={`
         relative group w-full
         py-3xs pl-2xs pr-3xl mb-md
         rounded-2xs bg-gray-25
         whitespace-pre-wrap break-all
         inset-ring-1 inset-ring-gray-10
       `}
-    >
-      <code
-        dangerouslySetInnerHTML={{ __html: highlightedCode }}
-        className="w-full text-violet-80"
-      />
+		>
+			<code
+				dangerouslySetInnerHTML={{ __html: highlightedCode }}
+				className="w-full text-violet-80"
+			/>
 
-      <button
-        className={`
+			<button
+				type="button"
+				className={`
             absolute top-5xs right-5xs
             p-2xs
             cursor-pointer
@@ -51,15 +52,15 @@ export const CodeBlock = ({
             opacity-0
             group-hover:opacity-100
           `}
-        onClick={clickToCopy}
-      >
-        <BvIcon
-          name={copied ? "checkCircle" : "fileCopy"}
-          width={16}
-          className="text-gray-90"
-          title={copied ? "Copied!" : "Copy"}
-        />
-      </button>
-    </pre>
-  );
+				onClick={clickToCopy}
+			>
+				<BvIcon
+					name={copied ? "checkCircle" : "fileCopy"}
+					width={16}
+					className="text-gray-90"
+					title={copied ? "Copied!" : "Copy"}
+				/>
+			</button>
+		</pre>
+	);
 };
