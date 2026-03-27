@@ -24,8 +24,8 @@ importers:
         specifier: 2.1.2
         version: 2.1.2
       bevi-logo:
-        specifier: file:./packages/bevi-logo-0.0.1
-        version: file:packages/bevi-logo-0.0.1
+        specifier: link:packages\bevi-logo-0.0.1
+        version: link:packages/bevi-logo-0.0.1
       next:
         specifier: 16.1.1
         version: 16.1.1(react-dom@19.2.3(react@19.2.3))(react@19.2.3)(sass@1.97.2)
@@ -810,9 +810,6 @@ packages:
 
   bevi-icon@2.1.2:
     resolution: {integrity: sha512-V0kA/hvI4hsacFMP05Xpjd6ptLXWtmOcFMdTH2On+pyVBX8i73P0Q0Ek7u7Ox9q9Gjc4+CeuTHZQ0VjWvyXYYA==}
-
-  bevi-logo@file:packages/bevi-logo-0.0.1:
-    resolution: {directory: packages/bevi-logo-0.0.1, type: directory}
 
   caniuse-lite@1.0.30001763:
     resolution: {integrity: sha512-mh/dGtq56uN98LlNX9qdbKnzINhX0QzhiWBFEkFfsFO4QyCvL8YegrJAazCwXIeqkIob8BlZPGM3xdnY+sgmvQ==}
@@ -2033,11 +2030,6 @@ snapshots:
   baseline-browser-mapping@2.9.14: {}
 
   bevi-icon@2.1.2:
-    dependencies:
-      react: 19.2.3
-      react-dom: 19.2.3(react@19.2.3)
-
-  bevi-logo@file:packages/bevi-logo-0.0.1:
     dependencies:
       react: 19.2.3
       react-dom: 19.2.3(react@19.2.3)

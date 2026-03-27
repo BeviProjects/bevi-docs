@@ -17,7 +17,6 @@ const BeviIcon = () => {
 	const { setIconSelected } = useIconSelectedContext();
 	const router = useRouter();
 	const searchParams = useSearchParams();
-	const _isMounted = useRef(false);
 	const searchParamsRef = useRef(searchParams);
 
 	const initialVariantRef = useRef(variant);
@@ -133,7 +132,7 @@ const BeviIcon = () => {
 				}}
 			/>
 
-			<VaulDrawer title="Just a test" description="Its a test">
+			<VaulDrawer title="Bandeja do icone" description="Conteúdo do icone selecionado">
 				<IconSelectedContent />
 			</VaulDrawer>
 		</>
