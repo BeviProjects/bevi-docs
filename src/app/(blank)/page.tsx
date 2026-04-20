@@ -9,7 +9,7 @@ const Home = () => {
         <Container>
           <div className="flex flex-row items-center justify-start gap-2xs">
             <BvIcon name="book" variant="duo" />
-            <h1 className="text-2xl font-bold text-violet-20">Hello World</h1>
+            <h1 className="text-2xl font-bold text-violet-20">Bevi Docs</h1>
           </div>
           <p className="text-lg text-gray-35">
             Todas as bibliotecas criadas para projetos Bevi
@@ -34,7 +34,7 @@ const Home = () => {
           <div className="flex flex-row justify-start items-center gap-2xs p-2xs bg-yellow-90 inset-ring-1 inset-ring-yellow-80 rounded-md mb-xs">
             <BvIcon name="error" className="text-yellow-20" />
             <p className="font-semibold text-yellow-20">
-              Esse ambiente se encontra em desenvolvimento, então erros são
+              Este ambiente se encontra em desenvolvimento, então erros são
               esperados, e serão corrigidos ao longo do tempo.
             </p>
           </div>
